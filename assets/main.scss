@@ -60,3 +60,37 @@
 
 .codecell table { width: auto; }
 
+/* ===============================
+   Typography
+   =============================== */
+
+/* 全局正文 */
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #222;
+}
+
+/* 博客正文区域（防止影响导航/侧边栏） */
+.post {
+  font-size: 1rem;
+}
+
+/* 段落 */
+.post p {
+  margin-bottom: 1.2em;
+  text-indent: 2em;
+}
+
+/* 标题 */
+.post h1 { font-size: 2.2rem; }
+.post h2 { font-size: 1.8rem; }
+.post h3 { font-size: 1.4rem; }
+
+/* 代码（非常重要，和正文区分） */
+code, pre {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.9em;
+}
+
