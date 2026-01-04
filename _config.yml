@@ -11,11 +11,11 @@ description: A quiet place for notes, thoughts, and occasional writing.
 github_username: nisoke
 
 # Email and twitter are optional:
-email:sunchangxu23@gmail.com
+email: sunchangxu23@gmail.com
 twitter_username:
 
 # Set this to true to get LaTeX math equation support
-use_math:true
+use_math: true
 
 # Add your Google Analytics ID here if you have one and want to use it
 google_analytics:
