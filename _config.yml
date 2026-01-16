@@ -2,20 +2,18 @@
 title: "Changxu's Blog"
 tagline: "A quiet place for notes, thoughts, and occasional feelings"
 description: "Personal blog of nisoke"
-baseurl: ""  # 如果是项目页，填仓库名；用户页则留空
-url: "https://nisoke.github.io"  # 你的网站地址
+baseurl: ""  
+url: "https://nisoke.github.io"
 github_username: nisoke
 
 # ==================== 主题设置 ====================
-# 关键：只使用 remote_theme，不要有其他 theme 设置
 remote_theme: cotes2020/jekyll-theme-chirpy
 
 # ==================== 语言和时区 ====================
-lang: en-US  # 或 zh-CN
+lang: en-US
 timezone: Asia/Shanghai
 
 # ==================== 插件 ====================
-# 最小化插件列表
 plugins:
   - jekyll-remote-theme
   - jekyll-paginate
@@ -28,22 +26,14 @@ social:
   name: nisoke
   github: nisoke
   email: nisokesun@gmail.com
-  # 可选
-  # twitter: 
-  # linkedin: 
 
 # ==================== Chirpy 特定配置 ====================
 paginate: 10
 paginate_path: /page:num/
-
-# 主题模式：light, dark, auto
 theme_mode: auto
-
-# 主题色
 theme_color: blue
 
 # ==================== 评论系统 ====================
-# 先禁用，等网站正常后再开启
 # comments:
 #   active: 
 
@@ -56,8 +46,6 @@ analytics:
 # ==================== SEO 优化 ====================
 seo:
   type: Blog
-  # twitter:
-  #   username: 
 
 # ==================== Markdown 处理器 ====================
 markdown: kramdown
