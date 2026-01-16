@@ -1,18 +1,28 @@
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
 
-title: Changxu's personal blog
-description: A quiet place for notes, thoughts, and occasional writing.
+
+title: Changxu's blog
+description: A quiet place for notes, thoughts, and occasional feelings.
 github_username: nisoke
 
-# Email and twitter are optional:
-email: sunchangxu23@gmail.com
-twitter_username:
+
+remote_theme: cotes2020/jekyll-theme-chirpy
+
+# 构建相关
+plugins:
+  - jekyll-remote-theme
+
+# 你的社交账号（可选）
+social:
+  name: nisoke           # 你的名字
+  email: nisokesun@gmail.com
+  github: nisoke         # 你的GitHub用户名
+
+# 网站链接
+url: "https://nisoke.github.io"  # 你的博客地址
+baseurl: ""  # 如果你的博客不在子路径，就保持为空
 
 # Set this to true to get LaTeX math equation support
 use_math: true
