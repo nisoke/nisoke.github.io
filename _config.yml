@@ -2,47 +2,70 @@
 #
 # This config file is meant for settings that affect your whole blog.
 
-
+# ==================== 基础配置 ====================
 title: Changxu's blog
 description: A quiet place for notes, thoughts, and occasional feelings.
-github_username: nisoke
+lang: en-US  # 或 zh-CN，根据你的需要
+timezone: Asia/Shanghai  # 时区设置
+github_username: nisoke  # 这个会被 github-metadata 插件使用
 
-
+# ==================== 主题配置 ====================
+# 注意：这里的关键是 remote_theme 的优先级高于 theme
 remote_theme: cotes2020/jekyll-theme-chirpy
 
-# 构建相关
+# ==================== 插件配置 ====================
+# 这是最关键的修复：plugins 只能有一个，不能重复！
 plugins:
-  - jekyll-remote-theme
+  - jekyll-remote-theme  # 必须：用于加载远程主题
+  - jekyll-feed          # RSS 订阅
+  - jekyll-seo-tag       # SEO 优化
+  - jekyll-sitemap       # 站点地图
+  - jekyll-paginate      # 分页功能（Chirpy 必需）
+  # 以下插件可以移除，因为 Chirpy 可能不兼容或自带
+  # - jekyll-gist
+  # - jekyll-octicons
+  # - jekyll-github-metadata
 
-# 你的社交账号（可选）
+# ==================== 社交信息 ====================
 social:
-  name: nisoke           # 你的名字
+  name: nisoke
   email: nisokesun@gmail.com
-  github: nisoke         # 你的GitHub用户名
+  github: nisoke
+  # 可选添加：
+  # twitter: your_twitter
+  # linkedin: your_linkedin
+  # rss: true  # 显示 RSS 链接
 
-# 网站链接
-url: "https://nisoke.github.io"  # 你的博客地址
-baseurl: ""  # 如果你的博客不在子路径，就保持为空
+# ==================== 评论系统 ====================
+# 先禁用，等博客正常工作后再配置
+# comments:
+#   active: utterances
+#   utterances:
+#     repo: nisoke/nisoke.github.io
+#     issue_term: pathname
 
-# Set this to true to get LaTeX math equation support
+# ==================== 网站链接 ====================
+url: "https://nisoke.github.io"
+baseurl: ""  # 如果是项目页，比如 <username>.github.io/<repo>，这里填 "/<repo>"
+
+# ==================== Chirpy 特定配置 ====================
+paginate: 10  # 每页显示文章数
+paginate_path: /page:num/
+
+# 如果遇到阅读时间错误，可以暂时禁用
+# read_time: false
+
+# 主题色设置（可选）
+theme_mode:  # 可选：light, dark, auto（默认auto，根据系统设置切换）
+theme_color: pink  # 可选：blue, green, pink 等
+
+# ==================== 数学公式支持 ====================
 use_math: true
 
-# Add your Google Analytics ID here if you have one and want to use it
+# ==================== 谷歌分析 ====================
 google_analytics:
 
-# Everything below here can be ignored, unless you want to change the theme entirely
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-octicons
-  - jekyll-github-metadata
-
-titles_from_headings:
-  enabled:     true
-  strip_title: true
-  collections: true
-
+# ==================== 其他配置（保持原样或简化） ====================
 highlighter: rouge
 markdown: kramdown
 kramdown:
@@ -51,3 +74,10 @@ kramdown:
   auto_ids: true
   hard_wrap: false
   syntax_highlighter: rouge
+
+# 以下内容可以删除或注释掉，因为 Chirpy 可能不兼容
+# theme: minima  # 这个会和 remote_theme 冲突，应该删除或注释掉
+# titles_from_headings:
+#   enabled:     true
+#   strip_title: true
+#   collections: true
