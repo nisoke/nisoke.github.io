@@ -3,14 +3,7 @@ description: "A quiet place for notes, thoughts, and occasional feelings"
 baseurl: ""
 url: "https://nisoke.github.io"
 
-remote_theme: cotes2020/jekyll-theme-chirpy
+# 使用GitHub Pages官方支持的主题
+theme: jekyll-theme-minimal
 
-plugins:
-  - jekyll-remote-theme
-  - jekyll-paginate
-
-paginate: 10
-
-social:
-  name: nisoke
-  github: nisoke
+# 如果需要，可以添加一些社交信息，但minimal主题可能不支持，所以先省略。
