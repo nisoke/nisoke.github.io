@@ -1,8 +1,8 @@
 ---
 title: "Happy New Year"
 date: 2026-01-03
-categories: [随笔]
-tags: [新年, 感悟]
+categories: [writing]
+tags: [new life]
 # Welcome to 2026
 1. TOC
 {:toc}
