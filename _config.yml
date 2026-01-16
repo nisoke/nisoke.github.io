@@ -1,83 +1,79 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog.
+# ==================== 基础设置 ====================
+title: "Changxu's Blog"
+tagline: "A quiet place for notes, thoughts, and occasional feelings"
+description: "Personal blog of nisoke"
+baseurl: ""  # 如果是项目页，填仓库名；用户页则留空
+url: "https://nisoke.github.io"  # 你的网站地址
+github_username: nisoke
 
-# ==================== 基础配置 ====================
-title: Changxu's blog
-description: A quiet place for notes, thoughts, and occasional feelings.
-lang: en-US  # 或 zh-CN，根据你的需要
-timezone: Asia/Shanghai  # 时区设置
-github_username: nisoke  # 这个会被 github-metadata 插件使用
-
-# ==================== 主题配置 ====================
-# 注意：这里的关键是 remote_theme 的优先级高于 theme
+# ==================== 主题设置 ====================
+# 关键：只使用 remote_theme，不要有其他 theme 设置
 remote_theme: cotes2020/jekyll-theme-chirpy
 
-# ==================== 插件配置 ====================
-# 这是最关键的修复：plugins 只能有一个，不能重复！
-plugins:
-  - jekyll-remote-theme  # 必须：用于加载远程主题
-  - jekyll-feed          # RSS 订阅
-  - jekyll-seo-tag       # SEO 优化
-  - jekyll-sitemap       # 站点地图
-  - jekyll-paginate      # 分页功能（Chirpy 必需）
-  # 以下插件可以移除，因为 Chirpy 可能不兼容或自带
-  # - jekyll-gist
-  # - jekyll-octicons
-  # - jekyll-github-metadata
+# ==================== 语言和时区 ====================
+lang: en-US  # 或 zh-CN
+timezone: Asia/Shanghai
 
-# ==================== 社交信息 ====================
+# ==================== 插件 ====================
+# 最小化插件列表
+plugins:
+  - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# ==================== 社交链接 ====================
 social:
   name: nisoke
-  email: nisokesun@gmail.com
   github: nisoke
-  # 可选添加：
-  # twitter: your_twitter
-  # linkedin: your_linkedin
-  # rss: true  # 显示 RSS 链接
-
-# ==================== 评论系统 ====================
-# 先禁用，等博客正常工作后再配置
-# comments:
-#   active: utterances
-#   utterances:
-#     repo: nisoke/nisoke.github.io
-#     issue_term: pathname
-
-# ==================== 网站链接 ====================
-url: "https://nisoke.github.io"
-baseurl: ""  # 如果是项目页，比如 <username>.github.io/<repo>，这里填 "/<repo>"
+  email: nisokesun@gmail.com
+  # 可选
+  # twitter: 
+  # linkedin: 
 
 # ==================== Chirpy 特定配置 ====================
-paginate: 10  # 每页显示文章数
+paginate: 10
 paginate_path: /page:num/
 
-# 如果遇到阅读时间错误，可以暂时禁用
-# read_time: false
+# 主题模式：light, dark, auto
+theme_mode: auto
 
-# 主题色设置（可选）
-theme_mode:  # 可选：light, dark, auto（默认auto，根据系统设置切换）
-theme_color: pink  # 可选：blue, green, pink 等
+# 主题色
+theme_color: blue
 
-# ==================== 数学公式支持 ====================
-use_math: true
+# ==================== 评论系统 ====================
+# 先禁用，等网站正常后再开启
+# comments:
+#   active: 
 
-# ==================== 谷歌分析 ====================
-google_analytics:
+# ==================== 分析工具 ====================
+analytics:
+  # google: G-XXXXXXXXXX
+  # facebook:
+  # twitter:
 
-# ==================== 其他配置（保持原样或简化） ====================
-highlighter: rouge
+# ==================== SEO 优化 ====================
+seo:
+  type: Blog
+  # twitter:
+  #   username: 
+
+# ==================== Markdown 处理器 ====================
 markdown: kramdown
 kramdown:
-  math_engine: katex
   input: GFM
   auto_ids: true
-  hard_wrap: false
+  math_engine: katex
   syntax_highlighter: rouge
 
-# 以下内容可以删除或注释掉，因为 Chirpy 可能不兼容
-# theme: minima  # 这个会和 remote_theme 冲突，应该删除或注释掉
-# titles_from_headings:
-#   enabled:     true
-#   strip_title: true
-#   collections: true
+# ==================== 其他 ====================
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
