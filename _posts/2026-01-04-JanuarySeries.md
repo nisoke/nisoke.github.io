@@ -1,3 +1,8 @@
+---
+title: "January Diary"
+date: 2026-01-05
+categories: [随笔]
+tags: [日常]
 # January Diary
 1. TOC
 {:toc}
