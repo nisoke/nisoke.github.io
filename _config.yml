@@ -1,67 +1,16 @@
-# ==================== 基础设置 ====================
 title: "Changxu's Blog"
-tagline: "A quiet place for notes, thoughts, and occasional feelings"
-description: "Personal blog of nisoke"
-baseurl: ""  
+description: "A quiet place for notes, thoughts, and occasional feelings"
+baseurl: ""
 url: "https://nisoke.github.io"
-github_username: nisoke
 
-# ==================== 主题设置 ====================
 remote_theme: cotes2020/jekyll-theme-chirpy
 
-# ==================== 语言和时区 ====================
-lang: en-US
-timezone: Asia/Shanghai
-
-# ==================== 插件 ====================
 plugins:
   - jekyll-remote-theme
   - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
 
-# ==================== 社交链接 ====================
+paginate: 10
+
 social:
   name: nisoke
   github: nisoke
-  email: nisokesun@gmail.com
-
-# ==================== Chirpy 特定配置 ====================
-paginate: 10
-paginate_path: /page:num/
-theme_mode: auto
-theme_color: blue
-
-# ==================== 评论系统 ====================
-# comments:
-#   active: 
-
-# ==================== 分析工具 ====================
-analytics:
-  # google: G-XXXXXXXXXX
-  # facebook:
-  # twitter:
-
-# ==================== SEO 优化 ====================
-seo:
-  type: Blog
-
-# ==================== Markdown 处理器 ====================
-markdown: kramdown
-kramdown:
-  input: GFM
-  auto_ids: true
-  math_engine: katex
-  syntax_highlighter: rouge
-
-# ==================== 其他 ====================
-sass:
-  style: compressed
-
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - README.md
