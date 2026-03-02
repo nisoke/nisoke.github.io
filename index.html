@@ -145,6 +145,83 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nisoke.github.io/2026/03/02/FEM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="旭">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunrise Realm">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/03/02/FEM/" class="post-title-link" itemprop="url">FEM</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2026-03-02 00:00:00 / 修改时间：14:46:45" itemprop="dateCreated datePublished" datetime="2026-03-02T00:00:00Z">2026-03-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="收敛性理论"><a href="#收敛性理论" class="headerlink" title="收敛性理论"></a>收敛性理论</h1><h2 id="4-1-辅助引理"><a href="#4-1-辅助引理" class="headerlink" title="4.1 辅助引理"></a>4.1 辅助引理</h2><h3 id="范数等价性引理"><a href="#范数等价性引理" class="headerlink" title="范数等价性引理"></a>范数等价性引理</h3><h4 id="引理描述"><a href="#引理描述" class="headerlink" title="引理描述"></a>引理描述</h4><p>$\Omega$ 带Lipschitz边界有界区域。$N\ge 1,N&#x3D;\text{dim}\mathbb{P}<em>{m-1}(\Omega)$, 其中$\mathbb{P}</em>{m-1}$是$\Omega$上$m-1$次多项式函数空间。</p>
+<p>$f_i:\mathbb{H}^m\rightarrow \mathbb{R},i&#x3D;1:N$ 连续线性泛函且 $\forall p \in \mathbb{P}<em>{m-1}, f_i(p)&#x3D;0$ 当且仅当 $p&#x3D;0$. 则空间 $\mathbb{H}^m$ 上范数 $||\cdot||</em>{\mathbb{H}^m}$ 和 $|\cdot|<em>{\mathbb{H}^m(\Omega)}+\sum^N</em>{i&#x3D;1}|f_i(\cdot)|$ 等价。</p>
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>${f_i}$ 在$\mathbb{P}<em>{m-1}’$上的限制可以作为 $\mathbb{P}</em>{m-1}$ 上的自由度，它们能唯一确定 $\mathbb{P}_{m-1}$ 中的元素（分离不同的元素）.</p>
+<p>因此这个引理说明了 $\mathbb{H}^m$ 中的元素的范数可以由有特殊性质的泛函以及半范控制。</p>
+<h3 id="Deny-Lions引理"><a href="#Deny-Lions引理" class="headerlink" title="Deny-Lions引理"></a>Deny-Lions引理</h3><h4 id="引理描述-1"><a href="#引理描述-1" class="headerlink" title="引理描述"></a>引理描述</h4><p>设 $\Omega$ 是带 Lipschitz 边界的有界区域. 对任一 $m\ge 1$, 存在常数 $C &#x3D; C(m, \Omega)$ 使得<br>$$\inf_{p∈\mathbb{P}<em>{m−1}(Ω)}||v − p||</em>{\mathbb{H}^m} ≤ C|v|_{\mathbb{H}^m} ,\forall v ∈ \mathbb{H}^m.$$</p>
+<h4 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h4><p>在带Lipschitz边界的有界区域上，任意函数 $v$ 可以被 $\mathbb{P}<em>{m−1}$ 中的函数 $p$ 以 $C|v|</em>{\mathbb{H}^m}$ 的精度逼近。其证明依赖于范数等价性中泛函的选取以及$|\mathbb{P}<em>{m−1}|</em>{\mathbb{H}_{m}}&#x3D;0$，则 $p$ 使得 $f_i(p) &#x3D; f_i(v), 1 ≤ i ≤ N$满足如此。</p>
+<h4 id="Bramble-Hilbert"><a href="#Bramble-Hilbert" class="headerlink" title="Bramble-Hilbert"></a>Bramble-Hilbert</h4><h3 id="尺度变换"><a href="#尺度变换" class="headerlink" title="尺度变换"></a>尺度变换</h3><h4 id="仿射等价"><a href="#仿射等价" class="headerlink" title="仿射等价"></a>仿射等价</h4><p>称两个单元 $K,\hat{K}$ 仿射等价若存在某个可逆仿射变换 $F$ 使得 $F(\hat{K})&#x3D;K,x &#x3D; B\hat{x}+b$ . 相应的，$K$上函数$v$满足 $\hat{v} &#x3D; v\circ F$.</p>
+<h4 id="半范控制"><a href="#半范控制" class="headerlink" title="半范控制"></a>半范控制</h4><p>设 $K$ 仿射等价于 $\hat{K}$ ，$v\in\mathbb{H}<em>{m}(K)$ ，则<br>$$|v|</em>{\mathbb{H}^m(K)} \le C||B^{-1}||^m|\text{det} B|^{1&#x2F;2}|\hat{v}|<em>{\mathbb{H}^m(\hat{K})}$$<br>$$|\hat{v}|</em>{\mathbb{H}^m(\hat{K})}\le C||B||^m|\text{det}B|^{-1&#x2F;2}|v|_{\mathbb{H}^m(K)} $$<br>，其中 $C&#x3D;d&#x2F;2$ 常数。</p>
+<p>证明概述：<br>$$\partial_{i_1}…\partial_{i_m} \hat{v}(\hat{x})&#x3D;\sum_{j_1,…j_m&#x3D;1}^d b_{j_1i_1}…b_{j_m i_m} \partial_{j_1}…\partial_{j_m} {v}({x})$$<br>从而利用Cauchy-Schwarz不等式放缩为$|Be_{j_1}|^2…|Be_{j_m}|^2$，进一步放缩到欧式范数。</p>
+<h4 id="几何估计"><a href="#几何估计" class="headerlink" title="几何估计"></a>几何估计</h4><p>$K,\hat{K}$ 仿射等价, $h_K &#x3D; \text{diam}K,h_{\hat{K}} &#x3D; \text{diam}\hat{K}$, $\rho_K,\rho_{\hat{K}}$ 分别为 $K,\hat{K}$ 的内接球半径，则成立：<br>$$ ||B|| \le \frac{h_K}{\rho_{\hat{K}}},||B^{-1}||\le \frac{h_{\hat{K}}}{\rho_{K}} ,|\text{det}B|&#x3D;\frac{|K|}{|\hat{K}|}$$</p>
+<h2 id="4-2-插值理论"><a href="#4-2-插值理论" class="headerlink" title="4.2 插值理论"></a>4.2 插值理论</h2><h3 id="局部插值估计"><a href="#局部插值估计" class="headerlink" title="局部插值估计"></a>局部插值估计</h3><h4 id="局部插值算子"><a href="#局部插值算子" class="headerlink" title="局部插值算子"></a>局部插值算子</h4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://nisoke.github.io/2026/01/26/2026_01_26/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -301,89 +378,6 @@
 <h1 id="Hello-2026"><a href="#Hello-2026" class="headerlink" title="Hello,2026"></a>Hello,2026</h1><p>My first and greatest challenge is the PhD qualifying examination. And I should try my best to learn how<br>to study ,how to find some questions. Plus, I should make some friends, althrough I still dont know how. </p>
 <p>Side quests：learn to live myself, find my own life, try to love.</p>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://nisoke.github.io/2026/01/05/FEM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="旭">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sunrise Realm">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/01/05/FEM/" class="post-title-link" itemprop="url">FEM</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2026-01-05 00:00:00" itemprop="dateCreated datePublished" datetime="2026-01-05T00:00:00Z">2026-01-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-03-02 14:38:13" itemprop="dateModified" datetime="2026-03-02T14:38:13Z">2026-03-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="收敛性理论"><a href="#收敛性理论" class="headerlink" title="收敛性理论"></a>收敛性理论</h1><h2 id="4-1-辅助引理"><a href="#4-1-辅助引理" class="headerlink" title="4.1 辅助引理"></a>4.1 辅助引理</h2><h3 id="范数等价性引理"><a href="#范数等价性引理" class="headerlink" title="范数等价性引理"></a>范数等价性引理</h3><h4 id="引理描述"><a href="#引理描述" class="headerlink" title="引理描述"></a>引理描述</h4><p>$\Omega$ 带Lipschitz边界有界区域。$N\ge 1,N&#x3D;\text{dim}\mathbb{P}<em>{m-1}(\Omega)$, 其中$\mathbb{P}</em>{m-1}$是$\Omega$上$m-1$次多项式函数空间。</p>
-<p>$f_i:\mathbb{H}^m\rightarrow \mathbb{R},i&#x3D;1:N$ 连续线性泛函且 $\forall p \in \mathbb{P}<em>{m-1}, f_i(p)&#x3D;0$ 当且仅当 $p&#x3D;0$. 则空间 $\mathbb{H}^m$ 上范数 $||\cdot||</em>{\mathbb{H}^m}$ 和 $|\cdot|<em>{\mathbb{H}^m(\Omega)}+\sum^N</em>{i&#x3D;1}|f_i(\cdot)|$ 等价。</p>
-<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>${f_i}$ 在$\mathbb{P}<em>{m-1}’$上的限制可以作为 $\mathbb{P}</em>{m-1}$ 上的自由度，它们能唯一确定 $\mathbb{P}_{m-1}$ 中的元素（分离不同的元素）.</p>
-<p>因此这个引理说明了 $\mathbb{H}^m$ 中的元素的范数可以由有特殊性质的泛函以及半范控制。</p>
-<h3 id="Deny-Lions引理"><a href="#Deny-Lions引理" class="headerlink" title="Deny-Lions引理"></a>Deny-Lions引理</h3><h4 id="引理描述-1"><a href="#引理描述-1" class="headerlink" title="引理描述"></a>引理描述</h4><p>设 $\Omega$ 是带 Lipschitz 边界的有界区域. 对任一 $m\ge 1$, 存在常数 $C &#x3D; C(m, \Omega)$ 使得<br>$$\inf_{p∈\mathbb{P}<em>{m−1}(Ω)}||v − p||</em>{\mathbb{H}^m} ≤ C|v|_{\mathbb{H}^m} ,\forall v ∈ \mathbb{H}^m.$$</p>
-<h4 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h4><p>在带Lipschitz边界的有界区域上，任意函数 $v$ 可以被 $\mathbb{P}<em>{m−1}$ 中的函数 $p$ 以 $C|v|</em>{\mathbb{H}^m}$ 的精度逼近。其证明依赖于范数等价性中泛函的选取以及$|\mathbb{P}<em>{m−1}|</em>{\mathbb{H}_{m}}&#x3D;0$，则 $p$ 使得 $f_i(p) &#x3D; f_i(v), 1 ≤ i ≤ N$满足如此。</p>
-<h4 id="Bramble-Hilbert"><a href="#Bramble-Hilbert" class="headerlink" title="Bramble-Hilbert"></a>Bramble-Hilbert</h4><h3 id="尺度变换"><a href="#尺度变换" class="headerlink" title="尺度变换"></a>尺度变换</h3><h4 id="仿射等价"><a href="#仿射等价" class="headerlink" title="仿射等价"></a>仿射等价</h4><p>称两个单元 $K,\hat{K}$ 仿射等价若存在某个可逆仿射变换 $F$ 使得 $F(\hat{K})&#x3D;K,x &#x3D; B\hat{x}+b$ . 相应的，$K$上函数$v$满足 $\hat{v} &#x3D; v\circ F$.</p>
-<h4 id="半范控制"><a href="#半范控制" class="headerlink" title="半范控制"></a>半范控制</h4><p>设 $K$ 仿射等价于 $\hat{K}$ ，$v\in\mathbb{H}<em>{m}(K)$ ，则<br>$$|v|</em>{\mathbb{H}^m(K)} \le C||B^{-1}||^m|\text{det} B|^{1&#x2F;2}|\hat{v}|<em>{\mathbb{H}^m(\hat{K})}$$<br>$$|\hat{v}|</em>{\mathbb{H}^m(\hat{K})}\le C||B||^m|\text{det}B|^{-1&#x2F;2}|v|_{\mathbb{H}^m(K)} $$<br>，其中 $C&#x3D;d&#x2F;2$ 常数。</p>
-<p>证明概述：<br>$$\partial_{i_1}…\partial_{i_m} \hat{v}(\hat{x})&#x3D;\sum_{j_1,…j_m&#x3D;1}^d b_{j_1i_1}…b_{j_m i_m} \partial_{j_1}…\partial_{j_m} {v}({x})$$<br>从而利用Cauchy-Schwarz不等式放缩为$|Be_{j_1}|^2…|Be_{j_m}|^2$，进一步放缩到欧式范数。</p>
-<h4 id="几何估计"><a href="#几何估计" class="headerlink" title="几何估计"></a>几何估计</h4><p>$K,\hat{K}$ 仿射等价, $h_K &#x3D; \text{diam}K,h_{\hat{K}} &#x3D; \text{diam}\hat{K}$, $\rho_K,\rho_{\hat{K}}$ 分别为 $K,\hat{K}$ 的内接球半径，则成立：<br>$$ ||B|| \le \frac{h_K}{\rho_{\hat{K}}},||B^{-1}||\le \frac{h_{\hat{K}}}{\rho_{K}} ,|\text{det}B|&#x3D;\frac{|K|}{|\hat{K}|}$$</p>
-<h2 id="4-2-插值理论"><a href="#4-2-插值理论" class="headerlink" title="4.2 插值理论"></a>4.2 插值理论</h2><h3 id="局部插值估计"><a href="#局部插值估计" class="headerlink" title="局部插值估计"></a>局部插值估计</h3><h4 id="局部插值算子"><a href="#局部插值算子" class="headerlink" title="局部插值算子"></a>局部插值算子</h4>
       
     </div>
 
