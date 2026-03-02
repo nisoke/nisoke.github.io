@@ -20,13 +20,23 @@
     var CONFIG = {"hostname":"nisoke.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-  <meta name="description" content="2026&#x2F;01&#x2F;25 Work report I report my recent works, including the following:  Sturm-Liouville problem on 1D finite domain, with Dirichlet or Neumann boundary conditions. Generalized eigenproblem of 1D La">
+<!-- MathJax -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']]
+  },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <meta name="description" content="2026&#x2F;01&#x2F;25Work reportI report my recent works, including the following:   Sturm-Liouville problem on 1D finite domain, with Dirichlet or Neumann boundary conditions. Generalized eigenproblem">
 <meta property="og:type" content="article">
 <meta property="og:title" content="diary">
 <meta property="og:url" content="https://nisoke.github.io/2026/01/26/2026_01_26/index.html">
 <meta property="og:site_name" content="Sunrise Realm">
-<meta property="og:description" content="2026&#x2F;01&#x2F;25 Work report I report my recent works, including the following:  Sturm-Liouville problem on 1D finite domain, with Dirichlet or Neumann boundary conditions. Generalized eigenproblem of 1D La">
+<meta property="og:description" content="2026&#x2F;01&#x2F;25Work reportI report my recent works, including the following:   Sturm-Liouville problem on 1D finite domain, with Dirichlet or Neumann boundary conditions. Generalized eigenproblem">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://nisoke.github.io/images/202601/crows.jpg">
 <meta property="og:image" content="https://nisoke.github.io/images/202601/sparrows.jpg">
@@ -202,9 +212,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1>2026/01/25</h1>
-<h2 id="Work-report">Work report</h2>
-<p>I report my recent works, including the following:</p>
+        <h1 id="2026-01-25"><a href="#2026-01-25" class="headerlink" title="2026&#x2F;01&#x2F;25"></a>2026&#x2F;01&#x2F;25</h1><h2 id="Work-report"><a href="#Work-report" class="headerlink" title="Work report"></a>Work report</h2><p>I report my recent works, including the following: </p>
 <ol>
 <li>Sturm-Liouville problem on 1D finite domain, with Dirichlet or Neumann boundary conditions.</li>
 <li>Generalized eigenproblem of 1D Laplace opretor on complete binary tree.</li>
@@ -218,13 +226,12 @@
 </ol>
 <p>Also I’m asked to do the following:</p>
 <ol>
-<li>Write a report about the recent works biweekly.</li>
-<li>Extend Sturm-Liouville problem to 2D and higher dimensions on <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><msup><mo>]</mo><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">[0,1]^d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.849108em;"></span><span class="strut bottom" style="height:1.099108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">[</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mclose"><span class="mclose">]</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">d</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>, with Dirichlet or Neumann boundary conditions. Calculate it using Firedrake, and compare the results with analytical solutions.</li>
+<li>Write a report about the recent works biweekly. </li>
+<li>Extend Sturm-Liouville problem to 2D and higher dimensions on $[0,1]^d$, with Dirichlet or Neumann boundary conditions. Calculate it using Firedrake, and compare the results with analytical solutions.</li>
 <li>Find the analytical solution of the QG eigenproblem on the complete binary tree, and compare it with the numerical solution.</li>
 <li>Read the papers about the FEM on QG and other numercal methods for the eigenproblem.</li>
 </ol>
-<h2 id="Personal-life">Personal life</h2>
-<p>Watched the U23 football game last night, I only have 3.5 hours to sleep, so I feel a bit tired today. The game was lost but I find it’s a good choice to watch football game to spend time.</p>
+<h2 id="Personal-life"><a href="#Personal-life" class="headerlink" title="Personal life"></a>Personal life</h2><p>Watched the U23 football game last night, I only have 3.5 hours to sleep, so I feel a bit tired today. The game was lost but I find it’s a good choice to watch football game to spend time. </p>
 <p>After the work report, I enjoy the hotpot alone at a small restaurant. The ZGC streets is down to earth like some normal streets in my hometown but tidy, quiet. Few people are walking around although it’s Sunday. I try to take a walk at national library but I am lost. Luckily I find some crows on a tree. Many birds here don’t fly, they just sit on the tree.</p>
 <table>
   <tr>
@@ -236,6 +243,8 @@
     </td>
   </tr>
 </table>
+
+
 
     </div>
 
@@ -319,7 +328,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">2026&#x2F;01&#x2F;25</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Work-report"><span class="nav-number">1.1.</span> <span class="nav-text">Work report</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Personal-life"><span class="nav-number">1.2.</span> <span class="nav-text">Personal life</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2026-01-25"><span class="nav-number">1.</span> <span class="nav-text">2026&#x2F;01&#x2F;25</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Work-report"><span class="nav-number">1.1.</span> <span class="nav-text">Work report</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Personal-life"><span class="nav-number">1.2.</span> <span class="nav-text">Personal life</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
