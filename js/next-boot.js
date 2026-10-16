@@ -108,6 +108,20 @@ NexT.boot.motion = function() {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Independent planner: keep this entry when regenerating the Hexo site.
+  const menu = document.querySelector('#menu');
+  if (menu && !menu.querySelector('a[href="/planner/"]')) {
+    const item = document.createElement('li');
+    item.className = 'menu-item menu-item-planner';
+    const link = document.createElement('a');
+    link.href = '/planner/';
+    link.rel = 'section';
+    const icon = document.createElement('i');
+    icon.className = 'fa fa-calendar-check fa-fw';
+    link.append(icon, document.createTextNode('计划与周结'));
+    item.append(link);
+    menu.append(item);
+  }
   NexT.boot.registerEvents();
   NexT.boot.refresh();
   NexT.boot.motion();
