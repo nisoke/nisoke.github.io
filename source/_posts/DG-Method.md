@@ -1,6 +1,7 @@
 ---
 title: DG Method
 date: 2026-11-26
+permalink: /2026/11/26/DG-Method/
 categories:
   - Notes
 tags:
