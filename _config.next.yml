@@ -37,19 +37,20 @@ toc:
   expand_all: false
   max_depth: 6
 
-# ==================== 数学公式 (KaTeX) ====================
+# ==================== 数学公式（由 body-end.njk 引入 MathJax） ====================
 math:
-  every_page: true
+  every_page: false
+  mathjax:
+    enable: false
   katex:
-    enable: true
-    cd: ''
+    enable: false
 
 # ==================== 页脚 ====================
 footer:
   since: 2026
   powered: true
 
-# ==================== 自定义样式 ====================
-inject:
-  head:
-    - <link rel="stylesheet" href="/css/custom.css">
+# ==================== 自定义文件（样式 & 数学公式） ====================
+custom_file_path:
+  head: source/_data/head.njk
+  bodyEnd: source/_data/body-end.njk

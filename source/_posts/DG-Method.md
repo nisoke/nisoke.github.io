@@ -1,4 +1,4 @@
----
+﻿---
 title: DG Method
 date: 2026-11-26
 categories:
@@ -13,19 +13,19 @@ tags:
 
 ## Introduction
 
-This chapter introduces the fundamental concepts and theoretical framework required for the construction and analysis of discontinuous Galerkin (DG) methods. First, for general linear variational problems, it presents the Banach–Nečas–Babuška (BNB) theorem characterizing their well-posedness and explains the stability meaning of the inf-sup condition. Subsequently, it constructs broken polynomial spaces through mesh partitions of the domain and polynomial approximation on elements, introduces concepts such as interface jumps, averages, and broken differential operators, clarifies the basic ideas of DG methods, and establishes the corresponding discrete models. On this basis, centering on the well-posedness of the discrete problem, it establishes an abstract error analysis framework for nonconforming finite element methods, reducing the error of the numerical solution to the best approximation error in the discrete space. Finally, to obtain convergence orders with respect to the mesh size $h$, it introduces the requirements for admissible mesh sequences and establishes inverse inequalities, trace inequalities, and polynomial approximation estimates.
+This chapter introduces the fundamental concepts and theoretical framework required for the construction and analysis of discontinuous Galerkin (DG) methods. First, for general linear variational problems, it presents the Banach鈥揘e膷as鈥揃abu拧ka (BNB) theorem characterizing their well-posedness and explains the stability meaning of the inf-sup condition. Subsequently, it constructs broken polynomial spaces through mesh partitions of the domain and polynomial approximation on elements, introduces concepts such as interface jumps, averages, and broken differential operators, clarifies the basic ideas of DG methods, and establishes the corresponding discrete models. On this basis, centering on the well-posedness of the discrete problem, it establishes an abstract error analysis framework for nonconforming finite element methods, reducing the error of the numerical solution to the best approximation error in the discrete space. Finally, to obtain convergence orders with respect to the mesh size $h$, it introduces the requirements for admissible mesh sequences and establishes inverse inequalities, trace inequalities, and polynomial approximation estimates.
 
 ### Well-Posedness for Linear Model Problems
 
 Consider the model problems involved in general finite element problems: let $X$ and $Y$ be Banach spaces, with the particular requirement that $Y$ be reflexive, and consider a general linear variational problem:
 $$
-\text{Find } u \in X, \text{ s.t. } a(u,w) = \langle f, w \rangle_{Y',Y}, \quad \forall w \in Y, \tag{1.1}
+\text{Find } u \in X, \text{ s.t. } a(u,w) = \langle f, w \rangle_{Y',Y}, \quad \forall w \in Y, \qquad (1.1)
 $$
 where $a \in \mathcal{L}(X \times Y; \mathbb{R})$ is bounded and $f \in Y'$.
 
 Equivalently, the operator form is:
 $$
-\text{Find } u \in X, \text{ s.t. } Au = f \text{ in } Y', \tag{1.2}
+\text{Find } u \in X, \text{ s.t. } Au = f \text{ in } Y', \qquad (1.2)
 $$
 where $A \in \mathcal{L}(X, Y')$, s.t. $\langle Av, w \rangle_{Y',Y} = a(v,w), \forall (v,w) \in X \times Y$.
 
@@ -35,7 +35,7 @@ In fact, starting from a PDE model and viewing the differential operator as a li
 
 For the study to be meaningful, the model problem must be well-posed, i.e., it admits a unique solution for any $f$ and the solution depends continuously on the right-hand side $f$.
 
-**Theorem 1.1 (The Banach–Nečas–Babuška Theorem).** Let $X$ and $Y$ be Banach spaces, with $Y$ reflexive, $a \in \mathcal{L}(X \times Y, \mathbb{R})$, and $f \in Y'$. Then (1.1) is well-posed if and only if
+**Theorem 1.1 (The Banach鈥揘e膷as鈥揃abu拧ka Theorem).** Let $X$ and $Y$ be Banach spaces, with $Y$ reflexive, $a \in \mathcal{L}(X \times Y, \mathbb{R})$, and $f \in Y'$. Then (1.1) is well-posed if and only if
 
 (i) There is $C_{\mathrm{sta}} > 0$ such that
 $$
@@ -69,7 +69,7 @@ The detailed proof is omitted here; instead, we only provide supplementary expla
 First, consider the operator form $Au = f$ in $Y'$. Well-posedness is equivalent to the existence and boundedness of $A^{-1}$. By the open mapping theorem, it suffices to prove that $A$ is a continuous linear bijection. The two conditions work as follows:
 
 - Condition (i) implies that $A$ is injective, and for any Cauchy sequence $Av_n$ in $R(A)$ (the range of $A$), the sequence $v_n$ is also a Cauchy sequence in $X$. Since $X$ is complete, it follows that $A(X)$ is a closed set.
-- Suppose $R(A)$ is not dense in $Y'$. By the Hahn–Banach theorem, there exists $\phi \in Y''$ with $\phi \neq 0$ such that $\phi|_{R(A)} = 0$. Here, the reflexivity of $Y$ is required. Then there exists $w \in Y$ such that $\langle \phi, g \rangle_{Y'',Y'} = \langle g, w \rangle_{Y',Y}$ for all $g \in Y'$. This contradicts condition (ii).
+- Suppose $R(A)$ is not dense in $Y'$. By the Hahn鈥揃anach theorem, there exists $\phi \in Y''$ with $\phi \neq 0$ such that $\phi|_{R(A)} = 0$. Here, the reflexivity of $Y$ is required. Then there exists $w \in Y$ such that $\langle \phi, g \rangle_{Y'',Y'} = \langle g, w \rangle_{Y',Y}$ for all $g \in Y'$. This contradicts condition (ii).
 
 In fact, the reflexivity of $Y$ implies that the weak$^*$ topology and the weak topology on $Y'$ coincide. It also implies that the closed unit ball $B_Y$ is weakly compact, that is, every bounded set in $Y$ has a weakly convergent subsequence.
 
@@ -81,7 +81,7 @@ means that for every direction $v$ in $X$, one can find a direction $w$ in $Y$ t
 
 Especially, if $Y = X$ is a Hilbert space, let $w = v$ be the active test function in the inf-sup condition, i.e., $a$ is coercive on $X$, and the sufficient condition is as follows:
 
-**Theorem 1.2 (Lax–Milgram Theorem).** Let $X$ be a Hilbert space, let $a \in \mathcal{L}(X \times X, \mathbb{R})$, and let $f \in X'$. Then problem (1.1) is well-posed if the bilinear form $a$ is coercive on $X$. Equivalently, problem (1.2) is well-posed if the linear operator $A \in \mathcal{L}(X, X')$ is coercive. Moreover, the following a priori estimate holds true:
+**Theorem 1.2 (Lax鈥揗ilgram Theorem).** Let $X$ be a Hilbert space, let $a \in \mathcal{L}(X \times X, \mathbb{R})$, and let $f \in X'$. Then problem (1.1) is well-posed if the bilinear form $a$ is coercive on $X$. Equivalently, problem (1.2) is well-posed if the linear operator $A \in \mathcal{L}(X, X')$ is coercive. Moreover, the following a priori estimate holds true:
 $$
 \|u\|_X \leq \frac{1}{C_{\mathrm{sta}}} \|f\|_{X'}.
 $$
@@ -94,7 +94,7 @@ In this process, there are several essential issues: 1. How to construct $V_h$ t
 
 Generally, $V_h$ is constructed as a piecewise polynomial space based on a geometric partition of the domain $\Omega$ and familiar polynomial spaces. However, if $V_h$ is not embedded in $V$ (i.e., $V_h \not\subset V$), the discrete weak formulation cannot directly inherit the original definitions of $a$ and $f$.
 
-For instance, in nonconforming finite element methods for the Laplace operator, such as the Crouzeix–Raviart (CR) element on a two-dimensional triangular mesh, $V_h$ ensures the continuity of edge averages between elements. The discrete bilinear operator $a_h$ only employs the piecewise gradient operator, which is sufficient to guarantee the approximation property of $V_h$ to $V$ in the sense of this operator, thereby establishing the error estimate.
+For instance, in nonconforming finite element methods for the Laplace operator, such as the Crouzeix鈥揜aviart (CR) element on a two-dimensional triangular mesh, $V_h$ ensures the continuity of edge averages between elements. The discrete bilinear operator $a_h$ only employs the piecewise gradient operator, which is sufficient to guarantee the approximation property of $V_h$ to $V$ in the sense of this operator, thereby establishing the error estimate.
 
 Here, we note that if the piecewise polynomials in $V_h$ are completely independent with no coupling between elements, then using only the piecewise gradient operator cannot establish a relationship between boundary information and the element interior information. Next, based on this idea, we first discuss the construction of the discrete function space and the establishment of the discrete model.
 
@@ -273,7 +273,7 @@ $$
 a_h(u - u_h, w_h) = 0.
 $$
 
-From the perspective of error analysis, the consistency condition is not strictly necessary. We need it because the Galerkin orthogonality it provides allows us to reduce the error to the approximation error of the discrete space. However, if the discrete operator we construct possesses a residual term beyond the consistency condition, and we can prove that this residual tends to zero as the mesh is refined—and furthermore, that it converges at the same order with respect to $h$—then strong consistency is unnecessary. In summary, consistency serves as a tool to ensure that the discrete operator does not deviate significantly from the original operator, and it provides a systematic framework for error analysis.
+From the perspective of error analysis, the consistency condition is not strictly necessary. We need it because the Galerkin orthogonality it provides allows us to reduce the error to the approximation error of the discrete space. However, if the discrete operator we construct possesses a residual term beyond the consistency condition, and we can prove that this residual tends to zero as the mesh is refined鈥攁nd furthermore, that it converges at the same order with respect to $h$鈥攖hen strong consistency is unnecessary. In summary, consistency serves as a tool to ensure that the discrete operator does not deviate significantly from the original operator, and it provides a systematic framework for error analysis.
 
 It should be noted that, since the space $V_h$ does not impose requirements on inter-element connectivity, $a_h$ should be subject to corresponding restrictions. Moreover, $a_h$ should be extendable to $(X^* + V_h) \times V_h$, where $X^*$ is the subspace to which the exact solution belongs. For instance, $X = H_0^1$ and $X^* = H^2 \cap H_0^1$.
 
@@ -298,7 +298,7 @@ $$
 
 ### $h$-estimate
 
-To obtain more refined error estimates—or, in practice, to understand how much the error is improved by refining the mesh or increasing the polynomial degree of $V_h$—we need to separate the mesh parameters and polynomial degree from the constants in the aforementioned abstract error estimate and the approximation error. Of course, a qualitative discussion is also required on whether the discrete operator retains well-posedness and boundedness as $h \to 0$ and the polynomial degree $p \to \infty$.
+To obtain more refined error estimates鈥攐r, in practice, to understand how much the error is improved by refining the mesh or increasing the polynomial degree of $V_h$鈥攚e need to separate the mesh parameters and polynomial degree from the constants in the aforementioned abstract error estimate and the approximation error. Of course, a qualitative discussion is also required on whether the discrete operator retains well-posedness and boundedness as $h \to 0$ and the polynomial degree $p \to \infty$.
 
 **The admissible mesh.** Prior to this, certain restrictions must be imposed on the mesh in order to separate $h$ from $\mathcal{T}_h$.
 
@@ -569,7 +569,7 @@ First, we start from the broken gradient. Let $a_h^{(0)}(v, w_h) = (\nabla_h v, 
 
 A straightforward idea is to ensure convergence first; more ideally, we hope that $a_h$ fully satisfies consistency. In this case, substituting the exact solution $u$ into $a_h^{(0)}$, we obtain:
 $$
-a_h^{(0)}(u, w_h) = -\sum_{T \in \mathcal{T}_h} \int_T (\Delta u) w_h + \sum_{T \in \mathcal{T}_h} \int_{\partial T} (\nabla u \cdot \mathbf{n}_T) w_h. \tag{2.1}
+a_h^{(0)}(u, w_h) = -\sum_{T \in \mathcal{T}_h} \int_T (\Delta u) w_h + \sum_{T \in \mathcal{T}_h} \int_{\partial T} (\nabla u \cdot \mathbf{n}_T) w_h. \qquad (2.1)
 $$
 By replacing the summation over $\partial T$ with the summation over faces $F \in \mathcal{F}_h$, and separating the test and trial functions, we obtain:
 $$
@@ -587,7 +587,7 @@ Its proof requires only the definitions and simple algebraic operations. This id
 
 Returning to (2.1), it reveals the gap between $a_h^{(0)}$ and the consistency requirement: it has an extra term $\sum_{T \in \mathcal{T}_h} \int_{\partial T} (\nabla u \cdot \mathbf{n}_T) w_h$. To address this, the most direct approach is to construct $a_h^{(1)} = a_h^{(0)} - \sum_{T \in \mathcal{T}_h} \int_{\partial T} (\nabla u \cdot \mathbf{n}_T) w_h$. Then, by using the equivalent form of this summation and the fact that the interface jump of $u$ is zero, we obtain
 $$
-a_h^{(1)}(v, w_h) := \int_\Omega \nabla_h v \cdot \nabla_h w_h - \sum_{F \in \mathcal{F}_h} \int_F \{\!\!\{\nabla_h v\}\!\!\} \cdot \mathbf{n}_F [\![w_h]\!]. \tag{2.2}
+a_h^{(1)}(v, w_h) := \int_\Omega \nabla_h v \cdot \nabla_h w_h - \sum_{F \in \mathcal{F}_h} \int_F \{\!\!\{\nabla_h v\}\!\!\} \cdot \mathbf{n}_F [\![w_h]\!]. \qquad (2.2)
 $$
 
 What is missing between consistency and convergence is the inf-sup condition of the operator $a_h$ on $V_h \times V_h$, as well as its boundedness on $V_h^* \times V_h$. Naturally, these constraints should be established under a reasonable topological structure induced by a discrete norm. The idea in the book is to construct an ideal symmetric bilinear operator and attempt to ensure its coercivity. Subsequently, inspired by the operator form, a discrete norm that can be extended to $V_h^*$ is introduced. Under the symmetry constraint in finite-dimensional spaces, coercivity is equivalent to the positive definiteness of the bilinear operator; under the guarantee of positive definiteness, the bilinear operator can naturally construct a norm on $V_h$, which also provides a clue for extending the norm to $V_h^*$. In short, we first ensure the symmetry of the operator, then its positive definiteness, provide the norm structure, and finally prove its boundedness.
@@ -606,4 +606,4 @@ Since $[\![u]\!]_F = 0$ for all $F \in \mathcal{F}_h$, this added term maintains
 
 ## References
 
-[1] D. A. Di Pietro and A. Ern, *Mathematical Aspects of Discontinuous Galerkin Methods*, Mathématiques & Applications, vol. 69, Springer, 2012.
+[1] D. A. Di Pietro and A. Ern, *Mathematical Aspects of Discontinuous Galerkin Methods*, Math茅matiques & Applications, vol. 69, Springer, 2012.
