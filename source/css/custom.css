@@ -1,0 +1,91 @@
+/* ===================== 正文排版 ===================== */
+.post-body {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #222;
+}
+
+.post-body p {
+  margin-bottom: 1.2em;
+}
+
+.post-body h1 { font-size: 2rem; }
+.post-body h2 { font-size: 1.7rem; }
+.post-body h3 { font-size: 1.35rem; }
+
+/* ===================== 代码字体 ===================== */
+.post-body code,
+.post-body pre {
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  font-size: 0.9em;
+}
+
+/* ===================== 图片 ===================== */
+.post-body img {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #021a40;
+  vertical-align: top;
+}
+
+.post-body figcaption {
+  text-align: center;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #888;
+}
+
+/* ===================== 链接 ===================== */
+.post-body a {
+  color: #0366d6;
+  border-bottom: 1px solid #ddd;
+  transition: border-color 0.2s;
+}
+
+.post-body a:hover {
+  border-bottom-color: #999;
+}
+
+/* ===================== Jupyter Notebook 代码单元 ===================== */
+.language-python { border-left: 1px solid lightcoral; }
+
+.language-python + .language-plaintext {
+  border-left: 1px solid grey;
+  margin-left: 1rem !important;
+}
+
+.language-python + .language-plaintext code { background-color: white !important; }
+.language-python + .language-plaintext pre { background-color: white !important; }
+
+.input_area pre, .input_area div {
+  margin-bottom: 0.1rem !important;
+  margin-top: 0.1rem !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+.output_area pre, .output_area div {
+  margin-bottom: 0.1rem !important;
+  margin-top: 0.1rem !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+  background-color: white !important;
+}
+
+.input_area pre { border-left: 1px solid lightcoral; }
+
+.output_area pre {
+  border-left: 1px solid grey;
+  margin-left: 1rem !important;
+}
+
+.codecell {
+  border-right: 2px solid lightgrey;
+  margin-bottom: 1rem !important;
+  margin-top: 1rem !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+.codecell table { width: auto; }

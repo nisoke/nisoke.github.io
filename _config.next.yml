@@ -1,0 +1,58 @@
+# ==================== 主题样式（Gemini） ====================
+scheme: Gemini
+
+# ==================== 深色模式 ====================
+darkmode: false
+
+# ==================== 网站图标 & 头像 ====================
+favicon:
+  small: /images/logo.png
+  medium: /images/logo.png
+  apple_touch_icon: /images/logo.png
+
+avatar:
+  url: /images/logo.png
+  rounded: false
+  rotated: false
+
+# ==================== 菜单 ====================
+menu:
+  home: / || fa fa-home
+  about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+
+# ==================== 侧边栏 ====================
+sidebar:
+  position: left
+  display: post
+
+# ==================== 社交链接 ====================
+social:
+  GitHub: https://github.com/nisoke || fab fa-github
+  E-Mail: mailto:nisokesun@gmail.com || fa fa-envelope
+
+# ==================== 目录 (TOC) ====================
+toc:
+  enable: true
+  number: true
+  expand_all: false
+  max_depth: 6
+
+# ==================== 数学公式 (KaTeX) ====================
+math:
+  every_page: true
+  katex:
+    enable: true
+    cd: ''
+
+# ==================== 页脚 ====================
+footer:
+  since: 2026
+  powered: true
+
+# ==================== 自定义样式 ====================
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/custom.css">

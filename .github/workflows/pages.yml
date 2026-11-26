@@ -1,8 +1,8 @@
-name: Deploy to GitHub Pages
+name: Deploy Hexo site to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
   workflow_dispatch:
 
 permissions:
@@ -20,29 +20,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          ruby-version: '3.1'
-          bundler-cache: true
-
+          node-version: '20'
+          cache: npm
       - name: Install dependencies
-        run: bundle install
-
-      - name: Build with Jekyll
-        run: |
-          JEKYLL_ENV=production bundle exec jekyll build \
-            --config _config.yml \
-            --destination ./_site
-        env:
-          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+        run: npm ci
+      - name: Generate static files
+        run: npx hexo generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
 
   deploy:
     environment:
