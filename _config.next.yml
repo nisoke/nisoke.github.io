@@ -6,21 +6,18 @@ darkmode: false
 
 # ==================== 网站图标 & 头像 ====================
 favicon:
-  small: /images/logo.png
-  medium: /images/logo.png
-  apple_touch_icon: /images/logo.png
+  small: /images/logo.svg
+  medium: /images/logo.svg
+  apple_touch_icon: /images/logo.svg
 
 avatar:
-  url: /images/logo.png
+  url: /images/avatar.gif
   rounded: false
   rotated: false
 
 # ==================== 菜单 ====================
 menu:
   home: / || fa fa-home
-  about: /about/ || fa fa-user
-  tags: /tags/ || fa fa-tags
-  categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
 
 # ==================== 侧边栏 ====================

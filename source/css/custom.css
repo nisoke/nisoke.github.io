@@ -89,3 +89,10 @@
 }
 
 .codecell table { width: auto; }
+
+/* ===================== MathJax SVG 显示公式（FEM 文章） ===================== */
+mjx-container[display="true"] {
+  display: block;
+  margin: 1em auto;
+  text-align: center;
+}
